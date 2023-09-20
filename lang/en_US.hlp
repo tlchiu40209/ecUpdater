@@ -1,0 +1,26 @@
+Eclipse IDE Installation Management Tool
+Usage : EC_Updater [Options]
+
+A program that ease up the installation process of Eclipse IDE on Linux
+
+Examples:
+  EC_Updater -i				# Drop EC_Updater into interactive mode.
+  EC_Updater -s -d /foo/bar -p cpp	# Install the latest version of Eclipse CPP at /foo/bar
+  EC_Updater -u -d /foo/bar -v		# Upgrade Eclipse at /foo/bar to the latest version.
+  
+Main Operating Modes:
+  -i					Drop into interactive mode
+  -s					Install Eclipse
+  -u					Upgrade Eclipse
+  -r					Remove Eclipse
+  -c					Configure EC Updater
+  
+Parameters:
+  -d /some/directory/			Applying operation at /some/directory (Default: EC Updater directory)
+  -v YYYY-MM/R				Selecting Eclipse version. (Default: Latest stable release)
+  -p product				Selecting Eclipse product. (Mandatory for -s)
+  -b					Treating beta as latest version.
+  -l					Verbose
+  
+Translation was done by Wayne Chiu.
+For errors in the translation, please report to https://github.com/tlchiu40209

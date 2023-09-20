@@ -1,0 +1,26 @@
+Eclipse 整合式開發環境安裝管理工具
+使用方式 : EC_Updater [選項]
+
+一個讓安裝 Eclipse Linux 版更簡單容易的工具
+
+範例:
+  EC_Updater -i				# 將 EC_Updater 啟動至互動模式
+  EC_Updater -s -d /foo/bar -p cpp	# 將最新版本的 Eclipse CPP 安裝到 /foo/bar
+  EC_Updater -u -d /foo/bar		# 升級 /foo/bar 中的 Eclipse 至最新版本
+  
+主要作業模式:
+  -i					進入互動模式
+  -s					安裝 Eclipse
+  -u					升/降級 Eclipse
+  -r					移除 Eclipse
+  -c					設定 EC Updater
+  
+參數:
+  -d /some/directory/			對 /some/directory 目錄進行作業 (預設值: EC Updater 安裝的目錄)
+  -v YYYY-MM/R				選擇 Eclipse 版本 (預設值: 最新穩定版本)
+  -p product				選擇 Eclipse 產品 (若使用 -s 則為必選項)
+  -b					將測試版視同最新版
+  -l					偵錯輸出
+  
+繁體中文由 Wayne Chiu 提供
+有任何翻譯錯誤，請回報至 https://github.com/tlchiu40209
