@@ -1351,17 +1351,34 @@ string getInstalledEclipseProduct()
 	else
 	{
 		string eclipseRawProduct = "";
+		string p2RawProduct = "";
 		for (string eclipseProductVec : eclipseConf)
 		{
 			if (eclipseProductVec.find("eclipse.product") != string::npos)
 			{
 				eclipseRawProduct = eclipseProductVec;
 			}
+			else if (eclipseProductVec.find("eclipse.p2.profile") != string::npos)
+			{
+				p2RawProduct = eclipseProductVec;
+			}
 		}
 		vector<string> eclipseRawProductVector = splitString(eclipseRawProduct, '=');
 		vector<string> eclipseProductVector = splitString(eclipseRawProductVector[1], '.');
-		string eclipseProduct = eclipseProductVector[4];
-		return eclipseProduct;
+
+		if (eclipseProductVector.size() < 5)
+		{
+			// This occurred in some old Eclipse release, that product information contains at other place.
+			vector<string> eclipseRawP2Vector = splitString(eclipseRawProduct, '=');
+			vector<string> eclipseP2Vector = splitString(eclipseRawP2Vector[1], '.');
+			string eclipseProduct = eclipseP2Vector[2];
+			return eclipseProduct;
+		}
+		else
+		{
+			string eclipseProduct = eclipseProductVector[4];
+			return eclipseProduct;
+		}
 	}
 }
 
